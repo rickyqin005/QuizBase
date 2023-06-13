@@ -1,7 +1,5 @@
 package struct;
 
-import manager.UserManager;
-
 /**
  * A class that represents a User object in the program
  *

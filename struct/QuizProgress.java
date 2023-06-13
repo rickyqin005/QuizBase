@@ -12,7 +12,6 @@ import web.Server;
  */
 public class QuizProgress {
 
-    private String quizName;
     private Server server;
     private ArrayList<Integer> quizItemIDS;
 

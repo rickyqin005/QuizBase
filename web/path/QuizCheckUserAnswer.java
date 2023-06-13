@@ -4,7 +4,6 @@ import struct.QuizProgress;
 import utility.Pair;
 import web.HTTPRequest;
 import web.HTTPResponse;
-import web.Hyperlink;
 import web.Server;
 import web.WebPage;
 
