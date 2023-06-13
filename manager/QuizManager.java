@@ -205,7 +205,7 @@ public class QuizManager extends DatabaseManager {
                 String name = rsQuiz.getString("NAME");
                 String description = rsQuiz.getString("DESCRIPTION");
                 int creatorID = rsQuiz.getInt("CREATOR_ID");
-                list.add(new Quiz(id, name, description, creatorID, this, userManager));
+                list.add(new Quiz(id, name, description, creatorID, userManager));
             }
             resultQuiz.second().close();
             return list;
@@ -216,7 +216,7 @@ public class QuizManager extends DatabaseManager {
     }
 
     /**
-     * Executes read operations on the {@code QUIZ_ITEMS} database. 
+     * Executes read operations on the {@code QUIZ_ITEMS} database.
      * Runs a SQL {@code SELECT} statement to select QuizItems. Implementing classes must ensure that
      * <ul>
      *  <li>{@code getReadOperationResultSet(String statement)} is called</li>
@@ -235,7 +235,6 @@ public class QuizManager extends DatabaseManager {
             ArrayList<QuizItem> items = new ArrayList<>();
             while(rs.next()) {
                 int id = rs.getInt("ID");
-                int quizID = rs.getInt("QUIZ_ID");
                 int type = rs.getInt("TYPE");
                 String question = rs.getString("QUESTION");
                 if(type == FLASHCARD) {

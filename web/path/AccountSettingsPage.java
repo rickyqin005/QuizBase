@@ -4,7 +4,6 @@ import web.HTTPRequest;
 import web.HTTPResponse;
 import web.Server;
 import web.WebPage;
-import manager.UserManager;
 
 /**
  * A class representing the account settings page
@@ -28,7 +27,6 @@ public class AccountSettingsPage extends WebPage implements HTTPPath {
     @Override
     public HTTPResponse processRequest(HTTPRequest request, Server server) {
         Pair<String, String> credentials = server.checkSessionID(request);
-        UserManager manager = server.getUserManager();
         if(credentials == null) {
             return new HTTPResponse().setStatus(303).setHeaderField("Location", "/login");
         }

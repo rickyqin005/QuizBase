@@ -1,10 +1,6 @@
 package struct;
 
-import java.util.ArrayList;
-
-import manager.QuizManager;
 import manager.UserManager;
-import utility.SQLStatementBuilder;
 import web.Hyperlink;
 import web.WebComponent;
 
@@ -20,7 +16,6 @@ public class Quiz implements WebComponent {
     private String name;
     private String description;
     private int creatorId;
-    private QuizManager quizManager;
     private UserManager userManager;
 
     /**
@@ -30,15 +25,13 @@ public class Quiz implements WebComponent {
      * @param name The name of this Quiz
      * @param description The description of this Quiz
      * @param creatorId The ID of the creator of this Quiz
-     * @param quizManager An instance of a QuizManager used to manage this quiz
      * @param userManager An instance of a UserManager used to manage the creator
      */
-    public Quiz(int id, String name, String description, int creatorId, QuizManager quizManager, UserManager userManager) {
+    public Quiz(int id, String name, String description, int creatorId, UserManager userManager) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.creatorId = creatorId;
-        this.quizManager = quizManager;
         this.userManager = userManager;
     }
 
